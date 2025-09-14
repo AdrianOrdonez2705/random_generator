@@ -80,7 +80,11 @@ generar.addEventListener('click', () => {
         }
 
         if (!esEntero(P) || !esEntero(Xo) || !esEntero(k)) {
-            throw new Error("Los valores deben ser números enteros positivos")
+            throw new Error("Los valores deben ser números enteros positivos");
+        }
+
+        if (!esImpar(Xo)) {
+            throw new Error("Xo debe ser un número impar");
         }
 
         if (linear === true) {
@@ -167,4 +171,8 @@ function esPrimo(num) {
 
 function esEntero(num) {
     return Number.isInteger(num);
+}
+
+function esImpar(num) {
+    return num % 2 !== 0;
 }
