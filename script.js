@@ -27,13 +27,22 @@ generar.addEventListener('click', () => {
                 <td>Número Pseudo-Aleatorio</td>
             </tr>
         `;
-        P = parseInt(notP.value);
-        Xo = parseInt(notXo.value);
-        k = parseInt(notK.value);
-        c = parseInt(notC.value);
+        
+        P = parseFloat(notP.value);
+        Xo = parseFloat(notXo.value);
+        k = parseFloat(notK.value);
+        c = parseFloat(notC.value);
 
         if (isNaN(P) || isNaN(Xo) || isNaN(k) || isNaN(c)) {
             throw new Error("Entrada inválida");
+        }
+
+        if (!esEntero(P) || !esEntero(Xo) || !esEntero(k) || !esEntero(c)) {
+            throw new Error("Los valores deben ser números enteros positivos")
+        }
+
+        if (!esPrimo(c)) {
+            throw new Error("c debe ser primo");
         }
 
         a = 1 + (4 * k);
@@ -68,4 +77,20 @@ function calculateResults() {
         results.innerHTML += tab;
         Xo = x;
     }
+}
+
+function esPrimo(num) {
+    if (num <= 1) return false;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function esEntero(num) {
+    return Number.isInteger(num);
 }
