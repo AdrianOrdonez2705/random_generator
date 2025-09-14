@@ -11,23 +11,34 @@
         <div class="title">
             <h1>Generador de números aleatorios</h1>
         </div>
+
+        <div class="subtitle">
+            <h2 id="algoSubtitle">Algoritmo Lineal</h2>
+        </div>
+
         <div class="radioBtns">
             <input id="lineal" type="radio" name="algoritmo" checked />
             <label for="lineal">Algoritmo Lineal</label>
             <input id="multiplicativo" type="radio" name="algoritmo" />
             <label for="multiplicativo">Algoritmo Multiplicativo</label>
         </div>
-        <div class="subtitle">
-            <h2>Algoritmo Lineal</h2>
+
+        <div id="formulas" class="radioBtns" hidden>
+            <input type="radio" name="formula" id="uno" checked />
+            <label for="uno">3 + 8k</label>
+            <input type="radio" name="formula" id="dos" />
+            <label for="dos">5 + 8k</label>
         </div>
+
         <div class="controls">
             <input type="number" id="cantidad" class="controlInput" placeholder="Cantidad (P)" required />
             <input type="number" id="Xo" class="controlInput" placeholder="Xo" required />
             <input type="number" id="k" class="controlInput" placeholder="k" required />
-            <input type="number" id="c" class="controlInput" placeholder="c" required />
+            <input type="number" id="c" class="controlInput" placeholder="c" />
             <button id="generar" class="controlBtn" style="--btn-bg-color: #5e37fa; --hover-bg-color: #2b00ff;">Generar</button>
             <button id="limpiar" class="controlBtn" style="--btn-bg-color: #ff0000; --hover-bg-color: #a50000;">Limpiar</button>
         </div>
+
         <table class="results" id="results"></table>
     </div>
     <script src="./script.js"></script>
