@@ -93,6 +93,7 @@ generar.addEventListener('click', () => {
 
             a = 1 + (4 * k);
             g = Math.log(P) / Math.log(2);
+            g = esEntero(g) ? g : Math.round(g);
             m = Math.pow(2, g);
             prevalues.innerHTML = `
                 <tr>
@@ -112,6 +113,7 @@ generar.addEventListener('click', () => {
             }
 
             g = (Math.log(P) / Math.log(2)) + 2;
+            g = esEntero(g) ? g : Math.round(g);
             m = Math.pow(2, g);
             prevalues.innerHTML = `
                 <tr>
