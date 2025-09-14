@@ -43,7 +43,7 @@ body {
 }
 
 .controlInput:focus {
-    border: 1.5px solid #5e37fa;
+    border: 1.5px solid #ff0095;
 }
 
 .controlBtn {

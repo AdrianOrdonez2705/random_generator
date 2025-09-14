@@ -11,6 +11,7 @@ let a, g, m;
 let algorithm = 'lineal';
 
 const results = document.getElementById("results");
+const prevalues = document.getElementById("prevalues");
 const generar = document.getElementById("generar");
 const limpiar = document.getElementById("limpiar");
 const algoSubtitle = document.getElementById("algoSubtitle");
@@ -22,6 +23,7 @@ limpiar.addEventListener('click', () => {
     notK.value = '';
     notC.value = '';
     results.innerHTML = '';
+    prevalues.innerHTML = '';
 });
 
 document.querySelectorAll('input[name="algoritmo"]').forEach((radio) => {
@@ -45,12 +47,8 @@ document.querySelectorAll('input[name="algoritmo"]').forEach((radio) => {
 document.querySelectorAll('input[name="formula"]').forEach((radio) => {
     radio.addEventListener('change', () => {
         if (document.getElementById('uno').checked) {
-            algorithm = 'multiplicativo';
-            linear = false;
             uno = true;
         } else if (document.getElementById('dos').checked) {
-            algorithm = 'multiplicativo';
-            linear = false;
             uno = false;
         }
     });
@@ -87,7 +85,7 @@ generar.addEventListener('click', () => {
             throw new Error("Xo debe ser un número impar");
         }
 
-        if (linear === true) {
+        if (linear) {
             c = parseFloat(notC.value);
             if (!esPrimo(c) || isNaN(c) || !esEntero(c)) {
                 throw new Error("c debe ser primo, positivo y entero");
@@ -96,10 +94,17 @@ generar.addEventListener('click', () => {
             a = 1 + (4 * k);
             g = Math.log(P) / Math.log(2);
             m = Math.pow(2, g);
+            prevalues.innerHTML = `
+                <tr>
+                    <td>a = ${a}</td>
+                    <td>g = ${g}</td>
+                    <td>m = ${m}</td>
+                </tr>
+            `;
             calculateResultsLinear();
         }
 
-        if (linear === false) {
+        if (!linear) {
             if (uno === true) {
                 a = 3 + (8 * k);
             } else if (uno === false) {
@@ -108,6 +113,13 @@ generar.addEventListener('click', () => {
 
             g = (Math.log(P) / Math.log(2)) + 2;
             m = Math.pow(2, g);
+            prevalues.innerHTML = `
+                <tr>
+                    <td>a = ${a}</td>
+                    <td>g = ${g}</td>
+                    <td>m = ${m}</td>
+                </tr>
+            `;
             calculateResultsMultiplicativo();
         }
 
