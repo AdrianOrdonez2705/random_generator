@@ -19,10 +19,23 @@ body {
     width: 90%;
 }
 
+.subtitle {
+    border: 1px solid #9022ff;
+    border-radius: 50px;
+    margin: 10px 0px 10px 0px;
+    padding: 4px 0px 4px 25px;
+}
+
+.radioBtns {
+    margin: 10px 0px 10px 0px;
+    padding: 4px 0px 4px 15px;
+    border-bottom: 1.5px solid #ff006a;
+}
+
 .controlInput {
     color: white;
     margin: 4px;
-    padding: 2px 4px;
+    padding: 5px 4px 5px 6px;
     background: transparent;
     border-radius: 5px;
     border: 1.5px solid #6e7fff;
@@ -34,7 +47,7 @@ body {
 }
 
 .controlBtn {
-    padding: 2px 4px;
+    padding: 6px 8px;
     margin: 4px;
     color: white;
     background-color: var(--btn-bg-color);
