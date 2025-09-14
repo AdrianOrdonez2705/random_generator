@@ -75,6 +75,10 @@ generar.addEventListener('click', () => {
             throw new Error("Entrada inválida");
         }
 
+        if ((P < 1) || (Xo < 1) || (k < 1)) {
+            throw new Error("Los valores no deben ser negativos");
+        }
+
         if (!esEntero(P) || !esEntero(Xo) || !esEntero(k)) {
             throw new Error("Los valores deben ser números enteros positivos")
         }

@@ -15,6 +15,10 @@ body {
     justify-content: center;
 }
 
+.mainContainer {
+    width: 90%;
+}
+
 .controlInput {
     color: white;
     margin: 4px;
