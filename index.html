@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Generador de números aleatorios</title>
 </head>
+
 <body>
-    <div class="mainContainer">
-        <div class="title">
-            <h1>Generador de Números Aleatorios</h1>
-            <p>© Adrián Ordóñez Paredes</p>
-        </div>
+    <nav>
+        <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="./index.html">Generador de Números Aleatorios</a></li>
+            <li><a href="programa1/page1.html">Programa 1</a></li>
+            <li><a href="programa1/page1.html">Programa 2</a></li>
+            <li><a href="programa1/page1.html">Programa 3</a></li>
+            <li><a href="programa1/page1.html">Programa 4</a></li>
+            <li><a href="programa1/page1.html">Programa 5</a></li>
+            <li><a href="programa1/page1.html">Programa 6</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="mainContainer">
+            <div class="title">
+                <h1>Generador de Números Aleatorios</h1>
+                <p>© Adrián Ordóñez Paredes</p>
+            </div>
 
-        <div class="subtitle">
-            <h2 id="algoSubtitle">Algoritmo Lineal</h2>
-        </div>
+            <div class="subtitle">
+                <h2 id="algoSubtitle">Algoritmo Lineal</h2>
+            </div>
 
-        <div class="radioBtns">
-            <input id="lineal" type="radio" name="algoritmo" checked />
-            <label for="lineal">Algoritmo Lineal</label>
-            <input id="multiplicativo" type="radio" name="algoritmo" />
-            <label for="multiplicativo">Algoritmo Multiplicativo</label>
-        </div>
+            <div class="radioBtns">
+                <input id="lineal" type="radio" name="algoritmo" checked />
+                <label for="lineal">Algoritmo Lineal</label>
+                <input id="multiplicativo" type="radio" name="algoritmo" />
+                <label for="multiplicativo">Algoritmo Multiplicativo</label>
+            </div>
 
-        <div id="formulas" class="radioBtns" hidden>
-            <input type="radio" name="formula" id="uno" checked />
-            <label for="uno">3 + 8k</label>
-            <input type="radio" name="formula" id="dos" />
-            <label for="dos">5 + 8k</label>
-        </div>
+            <div id="formulas" class="radioBtns" hidden>
+                <input type="radio" name="formula" id="uno" checked />
+                <label for="uno">3 + 8k</label>
+                <input type="radio" name="formula" id="dos" />
+                <label for="dos">5 + 8k</label>
+            </div>
 
-        <div class="controls">
-            <input type="number" id="cantidad" class="controlInput" placeholder="Periodo (P)" required />
-            <input type="number" id="Xo" class="controlInput" placeholder="Semilla (Xo)" required />
-            <input type="number" id="k" class="controlInput" placeholder="k" required />
-            <input type="number" id="c" class="controlInput" placeholder="c" />
-            <input type="number" id="dec" class="controlInput" placeholder="Nº de Decimales" style="border: 1.5px solid #bbff00;" required/>
-            <button id="generar" class="controlBtn" style="--btn-bg-color: #5e37fa; --hover-bg-color: #340cfc;">Generar</button>
-            <button id="limpiar" class="controlBtn" style="--btn-bg-color: #ff0000; --hover-bg-color: #a50000;">Limpiar</button>
-        </div>
+            <div class="controls">
+                <input type="number" id="cantidad" class="controlInput" placeholder="Periodo (P)" required />
+                <input type="number" id="Xo" class="controlInput" placeholder="Semilla (Xo)" required />
+                <input type="number" id="k" class="controlInput" placeholder="k" required />
+                <input type="number" id="c" class="controlInput" placeholder="c" />
+                <input type="number" id="dec" class="controlInput" placeholder="Nº de Decimales"
+                    style="border: 1.5px solid #bbff00;" required />
+                <button id="generar" class="controlBtn"
+                    style="--btn-bg-color: #5e37fa; --hover-bg-color: #340cfc;">Generar</button>
+                <button id="limpiar" class="controlBtn"
+                    style="--btn-bg-color: #ff0000; --hover-bg-color: #a50000;">Limpiar</button>
+            </div>
 
-        <table class="results" id="prevalues"></table>
-        <table class="results" id="results"></table>
-    </div>
+            <table class="results" id="prevalues"></table>
+            <table class="results" id="results"></table>
+        </div>
+    </main>
     <script src="./script.js"></script>
 </body>
+
 </html>
