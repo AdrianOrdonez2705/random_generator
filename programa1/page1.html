@@ -1,16 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa 1</title>
+    <link rel="stylesheet" href="./styles1.css">
 </head>
+
 <body>
     <nav>
-        <a href="../index.html">Volver</a>
+
+        <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Generador de Números Aleatorios</a></li>
+            <li><a href="./page1.html">Programa 1</a></li>
+            <li><a href="../programa2/page2.html">Programa 2</a></li>
+            <li><a href="../programa3/page3.html">Programa 3</a></li>
+            <li><a href="../programa4/page4.html">Programa 4</a></li>
+            <li><a href="../programa5/page5.html">Programa 5</a></li>
+            <li><a href="../programa6/page6.html">Programa 6</a></li>
+        </ul>
+
     </nav>
     <main>
-        <div>Funciona!</div>
+
+        <h3>Problema</h3>
+
+        <div class="problema">
+            <p>Desarrollar el modelo de simulación para un depósito a plazo fijo.</p>
+        </div>
+
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Tiempo de Depósito a Plazo Fijo</td>
+                <td>T</td>
+                <td>Exógena</td>
+                <td>Años</td>
+                <td>Periodo de tiempo en el cual estará invertido el capital</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador</td>
+                <td>C</td>
+                <td>Endógena</td>
+                <td>Años</td>
+                <td>Variable autoincremental que aumenta en 1 unidad por iteración</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Capital</td>
+                <td>K</td>
+                <td>Endógena</td>
+                <td>$us</td>
+                <td>Monto de dinero inicial que incrementará respecto al interés anual</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Tasa Interés</td>
+                <td>i</td>
+                <td>Exógena</td>
+                <td>sin-dimension</td>
+                <td>Tasa constante de interés aplicado durante todo el periodo de inversión</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Interés (anual)</td>
+                <td>I</td>
+                <td>Estado</td>
+                <td>$us/año</td>
+                <td>Monto calculado respecto a la tasa de interés y el capital</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <table>
+            <tr>
+                <td>I = K * i [$us / años]</td>
+            </tr>
+            <tr>
+                <td>K = K + I [$us]</td>
+            </tr>
+            <tr>
+                <td>C = C + 1 [años]</td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputT" placeholder="T (tiempo)">
+        <input type="number" id="inputK" placeholder="K (capital)">
+        <input type="number" id="inputi" placeholder="i (tasa interés)">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+    <script src="./script1.js"></script>
 </body>
+
 </html>

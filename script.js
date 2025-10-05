@@ -3,7 +3,6 @@ document.getElementById('hamburger-menu').addEventListener("click", function() {
     navLinks.classList.toggle('open');
 });
 
-
 const notP = document.getElementById("cantidad");
 const notXo = document.getElementById("Xo");
 const notK = document.getElementById("k");
