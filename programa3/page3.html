@@ -19,9 +19,176 @@
             <li><a href="../programa6/page6.html">Programa 6</a></li>
         </ul>
     </nav>
+    
     <main>
-        <div>Page3 Works!</div>
+
+        <h3>Problema 3</h3>
+
+        <div class="problema">
+            <p>
+                Desarrollar el modelo de simulación para el
+                siguiente juego de dados: El apostador lanza 2
+                dados y si saca 7 en la suma de los dos dados gana,
+                caso contrario pierde, el costo del juego es de Bs.2
+                y la pérdida de la casa si el jugador gana es de Bs.5,
+                simular el juego para 10 lanzamientos y determine la ganancia neta
+                de la casa, el número de juegos que gana la casa y el porcentaje
+                de juegos que gana la casa.
+            </p>
+        </div>
+
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Número Máximo de Juegos</td>
+                <td>NMJ</td>
+                <td>Exógena</td>
+                <td>Juegos</td>
+                <td>Número máximo de juegos de dados</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador de Juegos</td>
+                <td>CJ</td>
+                <td>Endógena</td>
+                <td>Juegos</td>
+                <td>Variable autoincremental que aumenta en 1 unidad en cada juego</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ingreso Unitario Juego</td>
+                <td>IUJ</td>
+                <td>Exógena</td>
+                <td>Bs/Juego</td>
+                <td>Monto que el jugador paga antes de jugar</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ganancia Neta</td>
+                <td>GNETA</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>Ganancia que tiene la casa</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Resultado dado 1</td>
+                <td>DADO1</td>
+                <td>Estado</td>
+                <td>[1-6]/lanzamiento</td>
+                <td>Número entre 1 y 6</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Resultado dado 2</td>
+                <td>DADO2</td>
+                <td>Estado</td>
+                <td>[1-6]/lanzamiento</td>
+                <td>Número entre 1 y 6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Costo Unitario Suma7</td>
+                <td>CUS7</td>
+                <td>Exógena</td>
+                <td>Bs/Juego</td>
+                <td>Costo que pierde la casa cuando el jugador suma 7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Suma Dados</td>
+                <td>SDADOS</td>
+                <td>Estado</td>
+                <td>[2-12]/juego</td>
+                <td>Suma de los dados del jugador</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Número Juegos Ganados Casa</td>
+                <td>NJCASA</td>
+                <td>Endógena</td>
+                <td>Juegos</td>
+                <td>Total de juegos ganados por la casa</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Porcentaje Juegos Ganados Casa</td>
+                <td>PJC</td>
+                <td>Endógena</td>
+                <td>%</td>
+                <td>Porcentaje de juegos ganados por la casa</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Número Aleatorio dado 1</td>
+                <td>rDADO1</td>
+                <td>Estado</td>
+                <td>[0-1]/juego</td>
+                <td>Número pseudo-aleatorio entre 0 y 1</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Número Aleatorio dado 2</td>
+                <td>rDADO2</td>
+                <td>Estado</td>
+                <td>[0-1]/juego</td>
+                <td>Número pseudo-aleatorio entre 0 y 1</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <table>
+            <tr>
+                <td>IUJ = 2 [Bs/juego]</td>
+            </tr>
+            <tr>
+                <td>CUS7 = 5 [Bs/juego]</td>
+            </tr>
+            <tr>
+                <td>DADO1 = ROUND(1 + (6 - 1)rDADO1)</td>
+            </tr>
+            <tr>
+                <td>DADO2 = ROUND(1 + (6 - 1)rDADO2)</td>
+            </tr>
+            <tr>
+                <td>SDADOS = DADO1 + DADO2</td>
+            </tr>
+            <tr>
+                <td>IF SDADOS = 7 THEN GNETA = GNETA + IUJ - CUS7 ELSE GNETA = GNETA + IUJ</td>
+            </tr>
+            <tr>
+                <td>IF SDADOS != 7 THEN NJCASA = NJCASA + 1 ELSE NJCASA</td>
+            </tr>
+            <tr>
+                <td>PJC = (NJCASA / NMJ) * 100</td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputNMJ" placeholder="NMJ">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+
+
     <script src="./script3.js"></script>
 </body>
 </html>
