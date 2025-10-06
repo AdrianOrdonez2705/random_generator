@@ -19,9 +19,164 @@
             <li><a href="../programa6/page6.html">Programa 6</a></li>
         </ul>
     </nav>
+    
     <main>
-        <div>Page4 Works!</div>
+
+        <h3>Problema 4</h3>
+
+        <div class="problema">
+            <p>
+                Las llegadas de los clientes a una tienda sigue una
+                distribución uniforme 2&plusmn;2 por hora y cada cliente
+                compra artículos de acuerdo con la siguiente función de
+                probabilidad:
+            </p>
+            <p>
+                - Artículos: 0  1   2   3
+            </p>
+            <p>
+                - Probabilidad: 0.2  0.3  0.4  0.1 
+            </p>
+            <p>
+                Mediante el desarrollo de un modelo de simulación, determine
+                la ganancia neta del dueño, la cantidad de artículos vendidos
+                en ese día y el promedio, si sus costos por día asciende a Bs. 300
+                y el costo del artículo es igual a Bs. 50 y el precio de venta
+                es igual a Bs. 75.
+            </p>
+        </div>
+
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Número Máximo de Horas</td>
+                <td>NMH</td>
+                <td>Exógena</td>
+                <td>Hrs</td>
+                <td>Número máximo de horas que trabaja la tienda</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador de Horas</td>
+                <td>CH</td>
+                <td>Endógena</td>
+                <td>Hrs</td>
+                <td>Variable autoincremental que aumenta en 1 unidad en cada hora</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Llegada Clientes</td>
+                <td>LCLIE</td>
+                <td>Estado</td>
+                <td>Clientes/hr</td>
+                <td>Cantidad de Clientes que llegan en una hora (Entero)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Aleatorio Llegada Clientes</td>
+                <td>rLCLIE</td>
+                <td>Estado</td>
+                <td>[0-1]/hr</td>
+                <td>Número aleatorio entre 0 y 1</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Total Artículos Vendidos</td>
+                <td>TARTV</td>
+                <td>Endógena</td>
+                <td>Artículos</td>
+                <td>Total de artículos vendidos en una hora (y en el máximo de horas)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Costo Unitario Artículo</td>
+                <td>CUA</td>
+                <td>Exógena</td>
+                <td>Bs/Artículo</td>
+                <td>Costo de adquisición de cada artículo</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Precio Venta Unitario</td>
+                <td>PVA</td>
+                <td>Exógena</td>
+                <td>Bs/Artículo</td>
+                <td>Monto de venta de cada artículo</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Costo Fijo Diario</td>
+                <td>CFD</td>
+                <td>Exógena</td>
+                <td>Bs/10hr</td>
+                <td>Costo fijo de mantenimiento diario de la tienda</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Ganancia Neta</td>
+                <td>GNETA</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>Monto total de ganancia</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Artículos Vendidos por Cliente</td>
+                <td>ARTVC</td>
+                <td>Estado</td>
+                <td>Artículo/Cliente</td>
+                <td>Cantidad de artículos que compra un cliente</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Probabilidad Venta Artículo por Cliente</td>
+                <td>rARTVC</td>
+                <td>Estado</td>
+                <td>[0-1]/Cliente</td>
+                <td>Número definido aleatorio entre 0 y 1</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <table>
+            <tr>
+                <td>CUA = Bs. 50</td>
+            </tr>
+            <tr>
+                <td>PVA = Bs. 75</td>
+            </tr>
+            <tr>
+                <td>CFD = Bs. 300</td>
+            </tr>
+            <tr>
+                <td>LCLIE = ROUND(0 + (4 - 0)rLCLIE)</td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputNMH" placeholder="NMH">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+
     <script src="./script4.js"></script>
 </body>
 </html>
