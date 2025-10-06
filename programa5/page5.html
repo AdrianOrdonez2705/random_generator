@@ -19,9 +19,162 @@
             <li><a href="../programa6/page6.html">Programa 6</a></li>
         </ul>
     </nav>
+    
     <main>
-        <div>Page5 Works!</div>
+
+        <h3>Problema 5</h3>
+
+        <div class="problema">
+            <p>
+                Un granjero tiene una gallina que pone huevos a una razón
+                Poisson con media de 1 huevo/día. El 20% de los huevos se rompen,
+                del 30% de ellos nacen pollos y el resto permanecen como huevos.
+                De los pollos el 20% muere y el 80% sobreviven. Simule este sistema
+                durante 30 días y determine el ingreso promedio del granjero si cada 
+                huevo lo vende en Bs. 1,5 y cada pollo en Bs. 5 ¿Cuál será la cantidad 
+                de huevos que permanecen como huevos y pollos que sobreviven?
+            </p>
+        </div>
+
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Número Máximo de Días</td>
+                <td>NMD</td>
+                <td>Exógena</td>
+                <td>Días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador de Días</td>
+                <td>CD</td>
+                <td>Endógena</td>
+                <td>Días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Número de huevos que pone la gallina</td>
+                <td>NHPG</td>
+                <td>Estado</td>
+                <td>Huevos/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Aleatorio NHPG</td>
+                <td>rNHPG</td>
+                <td>Estado</td>
+                <td>[0-1]/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Aleatorio Estado Huevo</td>
+                <td>rEH</td>
+                <td>Estado</td>
+                <td>[0-1]/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Total Huevos Rotos</td>
+                <td>THR</td>
+                <td>Endógena</td>
+                <td>Huevos</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Total Huevos</td>
+                <td>TH</td>
+                <td>Endógena</td>
+                <td>Huevos</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Total Pollos que sobreviven</td>
+                <td>TPS</td>
+                <td>Endógena</td>
+                <td>Pollos</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Aleatorio Estado Pollo</td>
+                <td>rEP</td>
+                <td>Estado</td>
+                <td>[0-1]/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Ganancia Neta Total</td>
+                <td>GNT</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Ingreso promedio diario</td>
+                <td>IPD</td>
+                <td>Endógena</td>
+                <td>Bs/Día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Precio Venta Unitario Huevo</td>
+                <td>PVUH</td>
+                <td>Exógena</td>
+                <td>Bs/huevo</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Precio Venta Unitario Pollo</td>
+                <td>PVUP</td>
+                <td>Exógena</td>
+                <td>Bs/pollo</td>
+                <td>''</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <!-- ESTO FALTA COMPLETAR!!!!!!!!!!!!!!!-->
+        <table>
+            <tr>
+                <td>GNT</td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputNMD" placeholder="NMD">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+
     <script src="./script5.js"></script>
 </body>
 </html>
