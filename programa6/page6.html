@@ -19,9 +19,228 @@
             <li><a href="./page6.html">Programa 6</a></li>
         </ul>
     </nav>
+
     <main>
-        <div>Page6 Works!</div>
+
+        <h3>Problema 6</h3>
+
+        <div class="problema">
+            <p>
+                La demanda de azúcar en una tienda sigue una distribución
+                exponencial con media de 100 kg/día. El dueño de la tienda
+                revisa el inventario cada 7 días y hace un pedido a la planta
+                igual a la capacidad de la bodega menos la cantidad de azúcar
+                que tiene disponible en ese momento. La entrega no es inmediata
+                y sigue una distribución uniforme entre 1 y 3 días. La demanda 
+                no surtida por falta de existencias representa ventas perdidas.
+                La capacidad de almacenamiento de la bodega es de 700 kg. El 
+                costo de ordenar es de 100 Bs/orden. El costo de llevar el 
+                inventario es igual a 0.1 Bs/Kg, el costo de adquisición es 
+                igual a 3.5 Bs/Kg y el precio de venta es igual a 5 Bs/Kg. 
+                Determinar el comportamiento del inventario a lo largo del tiempo,
+                el costo y la ganancia neta, la demanda insatisfecha para un horizonte
+                de 2 meses. ¿Será la capacidad del almacén suficiente?
+            </p>
+        </div>
+
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Número Máximo de Días</td>
+                <td>NMD</td>
+                <td>Exógena</td>
+                <td>Días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador de Días</td>
+                <td>CD</td>
+                <td>Endógena</td>
+                <td>Días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>inventario de Azúcar</td>
+                <td>INAZU</td>
+                <td>Endógena</td>
+                <td>Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Demanda Azúcar</td>
+                <td>DAZU</td>
+                <td>Estado</td>
+                <td>Kg/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Aleatorio DAZU</td>
+                <td>rDAZU</td>
+                <td>Estado</td>
+                <td>[0-1]/día</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Capacidad Bodega</td>
+                <td>CBOD</td>
+                <td>Exógena</td>
+                <td>Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Costo Reorden</td>
+                <td>CORD</td>
+                <td>Exógena</td>
+                <td>Bs/pedido</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Tiempo de entrega</td>
+                <td>TENT</td>
+                <td>Estado</td>
+                <td>días/pedido</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Aleatorio TENT</td>
+                <td>rTENT</td>
+                <td>Estado</td>
+                <td>[0-1]/7días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Costo Unitario de Inventario</td>
+                <td>CUI</td>
+                <td>Exógena</td>
+                <td>Bs/Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Costo Unitario de Adquisición</td>
+                <td>CUA</td>
+                <td>Exógena</td>
+                <td>Bs/Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Precio Venta Unitario</td>
+                <td>PVU</td>
+                <td>Exógena</td>
+                <td>Bs/Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Ganancia Neta Total</td>
+                <td>GNT</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Demanda Insatisfecha Total</td>
+                <td>DIT</td>
+                <td>Endógena</td>
+                <td>Kg</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Pedido Azúcar</td>
+                <td>PAZU</td>
+                <td>Estado</td>
+                <td>Kg/7días</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Costo Total</td>
+                <td>CTOT</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Costo Diario de Inventario</td>
+                <td>CDI</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Costo Total de Adquisición</td>
+                <td>CTA</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Costo Total Reorden</td>
+                <td>CTO</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Ingreso Bruto</td>
+                <td>IBRU</td>
+                <td>Endógena</td>
+                <td>Bs</td>
+                <td>''</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <table>
+            <tr>
+                <td>CTOT = CDI + CTA + CTO</td>
+            </tr>
+            <tr>
+                <td>GNT = IBRU - CT</td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputNMD" placeholder="NMD">
+        <input type="number" id="inputCBOD" placeholder="CBOD">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+
     <script src="./script6.js"></script>
 </body>
 </html>
