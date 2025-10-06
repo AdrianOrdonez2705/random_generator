@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa 2</title>
     <link rel="stylesheet" href="./styles2.css">
 </head>
+
 <body>
     <nav>
         <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
@@ -19,9 +21,185 @@
             <li><a href="../programa6/page6.html">Programa 6</a></li>
         </ul>
     </nav>
+
     <main>
-        <div>Page2 Works!</div>
+
+        <h3>Problema 2</h3>
+
+        <div class="problema">
+            <p>Desarrollar el modelo de simulación para el siguiente programa lineal:</p>
+            <p>Encontrar el máximo de la siguiente función:</p>
+            <p>Z = 2X1 + 3X2 - X3</p>
+            <p>s.a.:</p>
+            <p>X1 + X2 >= 2</p>
+            <p>1 &lt;= X3 &lt;= 2</p>
+            <p>100 >= X2 >= 0 (Entero)</p>
+            <p>0 &lt;= X1 &lt;= 10</p>
+        </div>
+
+        <!-- Desde aquí -->
+        <h3>Diccionario de Variables</h3>
+
+        <table class="tabla-variables">
+            <tr>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Sigla</td>
+                <td>Clasificación</td>
+                <td>Unidades</td>
+                <td>Descripción</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Número Máximo de Iteraciones</td>
+                <td>NMAX</td>
+                <td>Exógena</td>
+                <td>Iteraciones</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Contador</td>
+                <td>C</td>
+                <td>Endógena</td>
+                <td>Iteraciones</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Variable de Decisión 1</td>
+                <td>X1</td>
+                <td>Endógena</td>
+                <td>Unidades</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Variable de Decisión 2</td>
+                <td>X2</td>
+                <td>Endógena</td>
+                <td>Unidades</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Variable de Decisión 3</td>
+                <td>X3</td>
+                <td>Endógena</td>
+                <td>Unidades</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Función Objetivo</td>
+                <td>Z</td>
+                <td>Endógena</td>
+                <td>Unidades</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Variable de Comparación 1</td>
+                <td>XC1</td>
+                <td>Estado</td>
+                <td>Unidades/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Variable de Comparación 2</td>
+                <td>XC2</td>
+                <td>Estado</td>
+                <td>Unidades/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Variable de Comparación 3</td>
+                <td>XC3</td>
+                <td>Estado</td>
+                <td>Unidades/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Función Objetivo de Comparación</td>
+                <td>ZC</td>
+                <td>Estado</td>
+                <td>Unidades/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Número Aleatorio para XC1</td>
+                <td>rXC1</td>
+                <td>Estado</td>
+                <td>[0-1]/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Número Aleatorio para XC2</td>
+                <td>rXC2</td>
+                <td>Estado</td>
+                <td>[0-1]/Iteración</td>
+                <td>''</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Número Aleatorio para XC3</td>
+                <td>rXC3</td>
+                <td>Estado</td>
+                <td>[0-1]/Iteración</td>
+                <td>''</td>
+            </tr>
+        </table>
+
+        <h3>Especificación de Relaciones Funcionales</h3>
+
+        <table>
+            <tr>
+                <td>XC1 = a + (b - a) = 0 + (10 - 0)rXC1</td>
+            </tr>
+            <tr>
+                <td>XC2 = ROUND(0 + (100 - 0)rXC2)</td>
+            </tr>
+            <tr>
+                <td>XC3 = 1 + (2 - 1)rXC3</td>
+            </tr>
+            <tr>
+                <td>ZC = 2XC1 + 3XC2 - XC3</td>
+            </tr>
+            <tr>
+                <td>
+                    IF ZC > Z THEN
+                    Z = ZC
+                    X1 = XC1
+                    X2 = XC2
+                    X3 = XC3
+                    ELSE
+                    Z = Z
+                    X1 = X1 
+                    X2 = X2 
+                    X3 = X3
+                </td>
+            </tr>
+        </table>
+
+        <h3>Ingreso de Variables</h3>
+
+        <input type="number" id="inputNMAX" placeholder="NMAX">
+        <button id="calcular" style="--color: #5e37fa; --hover-color: #3200f9;">Calcular</button>
+        <button id="limpiar" style="--color: #ff0000; --hover-color: #a50000;">Limpiar</button>
+
+        <h3>Resultados</h3>
+
+        <table id="calculations"></table>
+        <div class="resultados1" id="resultados1"></div>
+
     </main>
+
     <script src="./script2.js"></script>
 </body>
+
 </html>

@@ -86,8 +86,7 @@ h3 {
 }
 
 .problema, .resultados1 {
-    display: flex;
-    justify-content: left;
+    display: block;
     padding: 5px;
     margin: 10px 0px;
     border: 1px solid #ffffff;

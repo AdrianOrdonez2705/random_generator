@@ -78,9 +78,9 @@ function calcularPlazoFijo(T, K, i) {
 
         const data = `
             <tr>
-                <td>C = ${C}</td>
-                <td>I = ${I.toFixed(2)}</td>
-                <td>K = ${K.toFixed(2)}</td>
+                <td>${C}</td>
+                <td>${I.toFixed(2)}</td>
+                <td>${K.toFixed(2)}</td>
             </tr>
         `;
 
@@ -88,7 +88,7 @@ function calcularPlazoFijo(T, K, i) {
     }
 
     const result = `
-        <p>El capital luego de ${T} años es $us ${K.toFixed(2)} 
+        <p>El capital luego de ${T} años es $us ${K.toFixed(2)}</p>
     `;
 
     resultados1.innerHTML += result;
