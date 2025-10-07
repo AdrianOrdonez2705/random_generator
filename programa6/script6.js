@@ -28,7 +28,11 @@ calcular.addEventListener("click", () => {
         let cbod = parseFloat(inputCBOD.value);
 
         if (!esEntero(nmd)) {
-            throw new Error("el valor de nmd debe ser entero");
+            throw new Error("el valor de nmd debe ser un número entero");
+        }
+
+        if (isNaN(nmd) || isNaN(cbod) || nmd < 0 || cbod < 0) {
+            throw new Error("Entrada inválida");
         }
 
         const cabecera = `

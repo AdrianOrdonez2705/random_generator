@@ -25,7 +25,11 @@ calcular.addEventListener("click", () => {
         let nmax = parseFloat(inputNMAX.value);
 
         if (!esEntero(nmax)) {
-            throw new Error("el valor de nmax debe ser entero");
+            throw new Error("el valor de nmax debe ser un número entero");
+        }
+
+        if (isNaN(nmax) || nmax < 0) {
+            throw new Error("Entrada inválida");
         }
 
         const cabecera = `

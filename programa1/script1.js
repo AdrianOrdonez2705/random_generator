@@ -35,7 +35,11 @@ calcular.addEventListener("click", () => {
         }
 
         if (!esEntero(T)) {
-            throw new Error("El tiempo en años debe ser entero");
+            throw new Error("El tiempo en años debe ser un número entero");
+        }
+
+        if (T < 0 || K < 0 || isNaN(T) || isNaN(K)) {
+            throw new Error("Entrada inválida");
         }
 
         const cabecera = `
